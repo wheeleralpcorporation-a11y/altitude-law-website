@@ -42,15 +42,47 @@ if (consultationForm instanceof HTMLFormElement) {
   if (!(formStatus instanceof HTMLElement)) {
     console.error("Consultation form status region is missing.");
   } else {
-    consultationForm.addEventListener("submit", (event) => {
+    consultationForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       if (!consultationForm.reportValidity()) {
         return;
       }
 
-      formStatus.textContent =
-        "Online inquiry submission is not configured. Please email wheelerALP.corporation@gmail.com directly.";
+      const submitButton = consultationForm.querySelector('button[type="submit"]');
+      if (!(submitButton instanceof HTMLButtonElement)) {
+        console.error("Consultation form submit button is missing.");
+        return;
+      }
+
+      submitButton.disabled = true;
+      formStatus.textContent = "";
+
+      try {
+        const response = await fetch("https://formspree.io/f/myewybwj", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          body: new FormData(consultationForm),
+        });
+
+        if (!response.ok) {
+          formStatus.textContent =
+            "We could not submit your request. Please try again.";
+          return;
+        }
+
+        consultationForm.reset();
+        formStatus.textContent =
+          "Thank you. Your consultation request has been submitted.";
+      } catch (error) {
+        console.error("Consultation form submission failed.", error);
+        formStatus.textContent =
+          "We could not submit your request. Please try again.";
+      } finally {
+        submitButton.disabled = false;
+      }
     });
   }
 }
