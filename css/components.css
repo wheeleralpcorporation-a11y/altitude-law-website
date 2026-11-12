@@ -1,0 +1,235 @@
+/* Component Styles for Altitude Law */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.875rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-radius: 0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: #1F362D;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.page-hero .section-tag {
+  color: var(--color-bg);
+}
+
+.page-hero .btn-primary {
+  background-color: #C5A880;
+  border-color: #C5A880;
+  color: var(--color-text);
+}
+
+.page-hero .btn-primary:hover {
+  background-color: #D5BD99;
+  border-color: #D5BD99;
+}
+
+.page-hero .btn-outline {
+  border-color: #C5A880;
+  color: var(--color-bg);
+}
+
+.page-hero .btn-outline:hover {
+  background-color: #C5A880;
+  color: var(--color-primary);
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+  max-width: 700px;
+}
+
+.executive-feature {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background-color: var(--color-bg);
+}
+
+.executive-feature-card {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.executive-feature-portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+}
+
+.executive-feature-title {
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.executive-feature-credentials {
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.executive-feature-bio {
+  margin-bottom: 1.75rem;
+  color: #555552;
+  line-height: 1.75;
+}
+
+.executive-feature-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.executive-feature-email {
+  color: var(--color-primary);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.executive-feature-email:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.section-tag {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+}
+
+.card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.card p {
+  color: #555552;
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .executive-feature-card {
+    grid-template-columns: 1fr;
+  }
+
+  .executive-feature-portrait {
+    max-height: 32rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .executive-feature-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .executive-feature-portrait {
+    width: 100%;
+    height: auto;
+    max-height: 32rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    overflow-wrap: anywhere;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-height: 44px;
+    max-width: 100%;
+  }
+
+  textarea {
+    min-height: 8rem;
+  }
+
+  .btn {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .executive-feature-card {
+    padding: 1.25rem;
+  }
+
+  .executive-feature-title {
+    font-size: clamp(1.85rem, 8vw, 2.4rem);
+    overflow-wrap: anywhere;
+  }
+
+  .executive-feature-credentials {
+    font-size: 0.9375rem;
+    overflow-wrap: anywhere;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+}
